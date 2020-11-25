@@ -23,6 +23,7 @@ Route::prefix('checklists')->group(function () {
     Route::namespace('App\Http\Controllers\Templates')->prefix('templates')->group(function () {
 
         Route::get('', 'ListsController@execute');
+        Route::post('', 'CreateController@execute');
 
     });
 

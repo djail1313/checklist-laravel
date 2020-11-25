@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Templates;
 
 use App\Http\Controllers\Controller;
 use App\Http\QueryBuilder\CustomQueryBuilder;
-use App\Http\Resources\TemplateCollection;
+use App\Http\Resources\Templates\TemplateCollection;
 use App\Http\Traits\Pagination;
 use App\Models\Template;
 
