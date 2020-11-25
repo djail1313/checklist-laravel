@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('checklists')->group(function () {
+
+    Route::namespace('App\Http\Controllers\Templates')->prefix('templates')->group(function () {
+
+        Route::get('', 'ListsController@execute');
+
+    });
+
+});

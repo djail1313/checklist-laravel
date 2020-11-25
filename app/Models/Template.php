@@ -4,8 +4,10 @@
 namespace App\Models;
 
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 
 class Template extends Model
 {
@@ -29,7 +31,5 @@ class Template extends Model
     {
         return $this->hasMany(TemplateItem::class);
     }
-
-
 
 }
