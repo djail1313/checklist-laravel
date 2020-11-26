@@ -4,9 +4,10 @@
 namespace App\Http\V1\Resources\Checklists;
 
 
-use App\Http\V1\Resources\RelationshipResource;
+use App\Http\V1\Resources\Items\ItemRelationshipResource;
+use App\Http\V1\Resources\RelationshipCollection;
 
-class ItemsRelationship extends RelationshipResource
+class ItemsRelationship extends RelationshipCollection
 {
 
     public function getSelfLink():? string
@@ -30,4 +31,8 @@ class ItemsRelationship extends RelationshipResource
         return 'items';
     }
 
+    public function getData()
+    {
+        return ItemRelationshipResource::collection($this->collection);
+    }
 }

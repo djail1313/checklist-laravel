@@ -43,7 +43,7 @@ Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
             Route::get('{checklist}/items', 'GetChecklistItemsController@execute')
                 ->name('checklist_items.lists');
-            Route::get('{checklist}/relationships/items', 'GetChecklistItemsController@execute')
+            Route::get('{checklist}/relationships/items', 'GetRelationshipsChecklistItemsController@execute')
                 ->name('checklist_items.relationship_lists');
 
         });
