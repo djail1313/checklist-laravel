@@ -8,11 +8,9 @@ use App\Http\V1\Resources\CustomResourceCollection;
 class TemplateCollection extends CustomResourceCollection
 {
 
-    public function toArray($request)
+    public function getData()
     {
-        return [
-            'data' => $this->collection,
-        ];
+        return $this->collection;
     }
 
 }

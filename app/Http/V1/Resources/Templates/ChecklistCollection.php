@@ -4,11 +4,11 @@
 namespace App\Http\V1\Resources\Templates;
 
 use App\Http\V1\Resources\Checklists\ChecklistResource;
-use App\Http\V1\Resources\CustomResourceCollection;
 use App\Http\V1\Resources\Items\ItemResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Collection;
 
-class ChecklistCollection extends CustomResourceCollection
+class ChecklistCollection extends ResourceCollection
 {
 
     public function toArray($request)

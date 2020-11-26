@@ -33,18 +33,22 @@ Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
         });
 
-        Route::namespace('Checklists')->group(function () {
-
-            Route::get('{checklist}', 'DetailController@execute')->name('checklists.detail');
-
-        });
-
         Route::namespace('ChecklistItems')->group(function () {
 
             Route::get('{checklist}/items', 'GetChecklistItemsController@execute')
                 ->name('checklist_items.lists');
             Route::get('{checklist}/relationships/items', 'GetRelationshipsChecklistItemsController@execute')
                 ->name('checklist_items.relationship_lists');
+
+        });
+
+        Route::namespace('Checklists')->group(function () {
+
+            Route::get('', 'ListsController@execute')->name('checklists.lists');
+            Route::post('', 'CreateController@execute')->name('checklists.create');
+            Route::get('{checklist}', 'DetailController@execute')->name('checklists.detail');
+            Route::patch('{checklist}', 'UpdateController@execute')->name('checklists.update');
+            Route::delete('{checklist}', 'DeleteController@execute')->name('checklists.delete');
 
         });
 
