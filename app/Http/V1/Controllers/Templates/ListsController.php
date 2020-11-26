@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Http\Controllers\Templates;
+namespace App\Http\V1\Controllers\Templates;
 
 
 use App\Http\Controllers\Controller;
-use App\Http\QueryBuilder\CustomQueryBuilder;
-use App\Http\Resources\Templates\TemplateCollection;
-use App\Http\Traits\Pagination;
+use App\Http\V1\QueryBuilder\CustomQueryBuilder;
+use App\Http\V1\Resources\Templates\TemplateCollection;
+use App\Http\V1\Traits\Pagination;
 use App\Models\Template;
 
 class ListsController extends Controller

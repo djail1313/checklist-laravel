@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Traits;
+namespace App\Http\V1\Traits;
 
 
 

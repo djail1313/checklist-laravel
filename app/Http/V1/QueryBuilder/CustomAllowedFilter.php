@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Http\QueryBuilder;
+namespace App\Http\V1\QueryBuilder;
 
 
-use App\Http\QueryBuilder\Filters\CustomFiltersExact;
-use App\Http\QueryBuilder\Filters\CustomFiltersScope;
+use App\Http\V1\QueryBuilder\Filters\CustomFiltersExact;
+use App\Http\V1\QueryBuilder\Filters\CustomFiltersScope;
 use Spatie\QueryBuilder\AllowedFilter;
 
 class CustomAllowedFilter extends AllowedFilter

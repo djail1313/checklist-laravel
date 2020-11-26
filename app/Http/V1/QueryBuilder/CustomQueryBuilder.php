@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Http\QueryBuilder;
+namespace App\Http\V1\QueryBuilder;
 
 
-use App\Http\QueryBuilder\Concerns\CustomAddsFieldsToQuery;
+use App\Http\V1\QueryBuilder\Concerns\CustomAddsFieldsToQuery;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class CustomQueryBuilder extends QueryBuilder

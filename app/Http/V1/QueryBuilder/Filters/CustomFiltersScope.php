@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\QueryBuilder\Filters;
+namespace App\Http\V1\QueryBuilder\Filters;
 
 
 use Illuminate\Database\Eloquent\Builder;

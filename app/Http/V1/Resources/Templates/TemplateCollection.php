@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Http\Resources\Templates;
+namespace App\Http\V1\Resources\Templates;
 
-use App\Http\Resources\CustomResourceCollection;
+use App\Http\V1\Resources\CustomResourceCollection;
 
 class TemplateCollection extends CustomResourceCollection
 {

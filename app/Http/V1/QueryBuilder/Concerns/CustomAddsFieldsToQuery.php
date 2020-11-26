@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\QueryBuilder\Concerns;
+namespace App\Http\V1\QueryBuilder\Concerns;
 
 
 trait CustomAddsFieldsToQuery

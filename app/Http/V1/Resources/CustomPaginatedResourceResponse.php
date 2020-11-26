@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Http\Resources;
+namespace App\Http\V1\Resources;
 
 
-use App\Http\Traits\Pagination;
+use App\Http\V1\Traits\Pagination;
 use Illuminate\Http\Resources\Json\PaginatedResourceResponse;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
