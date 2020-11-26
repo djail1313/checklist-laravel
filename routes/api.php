@@ -35,8 +35,29 @@ Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
         Route::namespace('ChecklistItems')->group(function () {
 
-            Route::get('{checklist}/items', 'GetChecklistItemsController@execute')
-                ->name('checklist_items.lists');
+            Route::prefix('{checklist}/items')->group(function () {
+
+                Route::get('', 'GetChecklistItemsController@execute')
+                    ->name('checklist_items.lists');
+                Route::post('', 'CreateItemController@execute')
+                    ->name('checklist_items.create_item');
+                Route::post('_bulk', 'BulkUpdateItemController@execute')
+                    ->name('checklist_items.bulk_update_item');
+                Route::get('{item}', 'DetailItemController@execute')
+                    ->name('checklist_items.detail_item');
+                Route::patch('{item}', 'UpdateItemController@execute')
+                    ->name('checklist_items.update_item');;
+                Route::delete('{item}', 'DeleteItemController@execute')
+                    ->name('checklist_items.delete_item');
+
+            });
+
+            Route::get('items', 'ListItemsController@execute')
+                ->name('checklist_items.list_items');
+
+            Route::get('items/summaries', 'SummaryItemsController@execute')
+                ->name('checklist_items.summary_items');
+
             Route::get('{checklist}/relationships/items', 'GetRelationshipsChecklistItemsController@execute')
                 ->name('checklist_items.relationship_lists');
 

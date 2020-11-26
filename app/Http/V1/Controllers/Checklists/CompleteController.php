@@ -7,6 +7,7 @@ namespace App\Http\V1\Controllers\Checklists;
 use App\Events\ItemInChecklistCompleted;
 use App\Http\Controllers\Controller;
 use App\Models\Item;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
@@ -32,7 +33,8 @@ class CompleteController extends Controller
         $data = collect($data);
 
         Item::whereIn('id', $data->pluck('item_id'))->update([
-            'is_completed' => true
+            'is_completed' => true,
+            'completed_at' => Carbon::now(),
         ]);
 
         $items = Item::whereIn('id', $data->pluck('item_id'))->get();

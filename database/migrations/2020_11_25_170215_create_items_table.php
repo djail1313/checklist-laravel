@@ -16,7 +16,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('checklist_id');
-            $table->text('description');
+            $table->text('description')->nullable(true);
             $table->dateTime('due')->nullable(true);
             $table->unsignedInteger('urgency')->default(0);
             $table->unsignedBigInteger('assignee_id')->nullable(true);

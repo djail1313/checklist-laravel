@@ -23,10 +23,6 @@ class Checklist extends Model
         'due',
         'urgency',
         'description',
-        'is_completed',
-        'completed_at',
-        'created_by',
-        'last_update_by',
     ];
 
     public function items()

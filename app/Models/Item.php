@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -23,15 +24,19 @@ class Item extends Model
         'urgency',
         'assignee_id',
         'task_id',
-        'is_completed',
-        'completed_at',
-        'completed_by',
-        'updated_by',
-        'created_by',
     ];
 
     public function checklist()
     {
         return $this->belongsTo(Checklist::class);
     }
+
+    public function scopeDueBetween($query, $start_date, $end_date)
+    {
+        return $query->whereBetween('due', [
+            Carbon::createFromTimeString($start_date),
+            Carbon::createFromTimeString($end_date),
+        ]);
+    }
+
 }

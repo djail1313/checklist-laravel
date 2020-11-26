@@ -25,6 +25,9 @@ class ItemResource extends BaseResource
 
     public function getLink(): string
     {
-        return route('checklists.detail', ['checklist' => $this->getId()]);
+        return route('checklist_items.detail_item', [
+            'checklist' => $this->checklist_id,
+            'item' => $this->getId()]
+        );
     }
 }

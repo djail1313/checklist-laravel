@@ -20,7 +20,7 @@ class CreateChecklistsTable extends Migration
             $table->string('task_id')->nullable(true);
             $table->dateTime('due')->nullable(true);
             $table->unsignedInteger('urgency')->default(0);
-            $table->text('description');
+            $table->text('description')->nullable(true);
             $table->boolean('is_completed')->default(false);
             $table->dateTime('completed_at')->nullable(true);
             $table->unsignedBigInteger('last_update_by')->nullable(true);
