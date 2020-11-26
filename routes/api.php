@@ -46,6 +46,8 @@ Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
             Route::get('', 'ListsController@execute')->name('checklists.lists');
             Route::post('', 'CreateController@execute')->name('checklists.create');
+            Route::post('complete', 'CompleteController@execute')->name('checklists.complete');
+            Route::post('incomplete', 'InCompleteController@execute')->name('checklists.incomplete');
             Route::get('{checklist}', 'DetailController@execute')->name('checklists.detail');
             Route::patch('{checklist}', 'UpdateController@execute')->name('checklists.update');
             Route::delete('{checklist}', 'DeleteController@execute')->name('checklists.delete');

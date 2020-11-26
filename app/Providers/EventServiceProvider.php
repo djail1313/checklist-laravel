@@ -15,6 +15,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'App\Events\ItemInChecklistCompleted' => [
+            'App\Listeners\UpdateCompletedInChecklist'
+        ],
+        'App\Events\ItemInChecklistInCompleted' => [
+            'App\Listeners\UpdateInCompletedInChecklist'
+        ],
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
