@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
+Route::middleware(['auth.static'])->prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
     Route::prefix('checklists')->group(function () {
 

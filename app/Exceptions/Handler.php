@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Response;
+use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Validation\ValidationException;
 use Throwable;
 
@@ -43,6 +44,7 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e)
     {
+        // Better if we create our exception. More easier to handle
         if ($request->wantsJson()) {
             if ($e instanceof ModelNotFoundException) {
                 return response()->json([
@@ -54,6 +56,11 @@ class Handler extends ExceptionHandler
                     'status' => (string) $e->getStatusCode(),
                     'error' => $e->getMessage(),
                 ], $e->getStatusCode());
+            } elseif ($e instanceof UnauthorizedException) {
+                return response()->json([
+                    'status' => (string) Response::HTTP_UNAUTHORIZED,
+                    'error' => 'Not Authorized',
+                ], Response::HTTP_UNAUTHORIZED);
             } elseif ($e instanceof \ParseError) {
                 return response()->json([
                     'status' => (string) Response::HTTP_INTERNAL_SERVER_ERROR,
