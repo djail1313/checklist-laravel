@@ -22,6 +22,13 @@ Route::prefix('v1')->namespace('App\Http\V1\Controllers')->group(function () {
 
     Route::prefix('checklists')->group(function () {
 
+        Route::namespace('Histories')->prefix('histories')->group(function () {
+
+            Route::get('', 'ListsController@execute')->name('histories.lists');
+            Route::get('{history}', 'DetailController@execute')->name('histories.detail');
+
+        });
+
         Route::namespace('Templates')->prefix('templates')->group(function () {
 
             Route::get('', 'ListsController@execute')->name('templates.lists');
