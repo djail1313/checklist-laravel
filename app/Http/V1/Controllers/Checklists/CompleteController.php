@@ -10,6 +10,7 @@ use App\Models\Item;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class CompleteController extends Controller
 {
@@ -35,6 +36,7 @@ class CompleteController extends Controller
         Item::whereIn('id', $data->pluck('item_id'))->update([
             'is_completed' => true,
             'completed_at' => Carbon::now(),
+            'completed_by' => Auth::user()->getAuthIdentifier(),
         ]);
 
         $items = Item::whereIn('id', $data->pluck('item_id'))->get();
