@@ -23,7 +23,7 @@
 9. Your application is ready
 
 ## How to run
-- For simplicity just run `php artisan serve`. This command will start a development server at (http://localhost:8000)[http://localhost:8000]
+- For simplicity just run `php artisan serve`. This command will start a development server at [http://localhost:8000](http://localhost:8000)
 - You can also configure using nginx/apache
 - Or you can use valet or homestead for local environment
 
