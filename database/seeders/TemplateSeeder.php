@@ -21,11 +21,11 @@ class TemplateSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        Template::factory()->count(500)->has(
+        Template::factory()->count(200)->has(
             TemplateChecklist::factory()->count(1),
             'checklist'
         )->has(
-            TemplateItem::factory()->count($faker->numberBetween(1, 100)),
+            TemplateItem::factory()->count($faker->numberBetween(1, 30)),
             'items'
         )->create();
     }
