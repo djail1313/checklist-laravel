@@ -15,7 +15,7 @@
 1. Open your database client
 2. Create new database with charset *utf8mb4* and collation *utf8mb4_general_ci*
 3. Get into the root project's folder using cli
-4. Run composer install
+4. Run `composer install`
 5. Copy `.env.example` to `.env`
 6. Run `php artisan key:generate`
 7. Change your `DB_*` value in your `.env` file
@@ -25,7 +25,7 @@
 ## How to run
 - For simplicity just run `php artisan serve`
 - You can also configure using nginx/apache
-- Or you can use valet or homestead for good local environment
+- Or you can use valet or homestead for local environment
 
 ## How to test
 - Run `composer test`
@@ -36,7 +36,7 @@ You just need to import the postman collection and then in environment box, plea
 Because i already set the environment variable in the collection.
 
 ## Authorization
-I create custom guard that hardcode user's authenticable data.
+I create custom guard that hardcode user's authenticable data by token.
 Please use header Authorization Bearer token and put this token `Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7`
 
 ## Database seeding
