@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Guards\StaticGuard;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -25,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Auth::extend('static', function ($app, $name, array $config) {
+            return new StaticGuard($app['request']);
+        });
     }
 }

@@ -1,0 +1,1137 @@
+{
+	"info": {
+		"_postman_id": "da80db7c-270c-433b-9149-19c4e39b6ff6",
+		"name": "ChecklistService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Checklist Templates",
+			"item": [
+				{
+					"name": "Get checklist template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create checklist template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n\t\"data\": {\n\t    \"attributes\": {\n\t\t\t\"name\": \"foo template\",\n\t\t\t\"checklist\": {\n\t\t\t\t\"description\": \"my checklist\",\n\t\t\t\t\"due_interval\": 3,\n\t\t\t\t\"due_unit\": \"hour\"\n\t\t\t},\n\t\t\t\"items\": [\n\t\t\t\t{\n\t\t\t\t\t\"description\": \"my foo item\",\n\t\t\t\t\t\"urgency\": 2,\n\t\t\t\t\t\"due_interval\": 40,\n\t\t\t\t\t\"due_unit\": \"minute\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"description\": \"my bar item\",\n\t\t\t\t\t\"urgency\": 3,\n\t\t\t\t\t\"due_interval\": 30,\n\t\t\t\t\t\"due_unit\": \"minute\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Checklist Template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n\t\"data\": {\n        \"name\": \"foo template 2\",\n        \"checklist\": {\n            \"description\": \"my checklist\",\n            \"due_interval\": 3,\n            \"due_unit\": \"hour\"\n        },\n        \"items\": [\n            {\n                \"description\": \"my foo item\",\n                \"urgency\": 2,\n                \"due_interval\": 40,\n                \"due_unit\": \"minute\"\n            },\n            {\n                \"description\": \"my bar item Edit\",\n                \"urgency\": 3,\n                \"due_interval\": 30,\n                \"due_unit\": \"minute\"\n            },\n            {\n                \"description\": \"Baru cuy\",\n                \"urgency\": 1,\n                \"due_interval\": 1,\n                \"due_unit\": \"day\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign bulk checklists template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"attributes\": {\n\t\t\t\t\"object_id\": 1,\n\t\t\t\t\"object_domain\": \"deals\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"attributes\": {\n\t\t\t\t\"object_id\": 2,\n\t\t\t\t\"object_domain\": \"deals\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"attributes\": {\n\t\t\t\t\"object_id\": 3,\n\t\t\t\t\"object_domain\": \"deals\"\n\t\t\t}\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates/553/assigns",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates",
+								"553",
+								"assigns"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete checklist template",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates/552",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates",
+								"552"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all checklists templates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/templates?page[limit]=10&page[offset]=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"templates"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "10",
+									"description": "limit integer, default 10"
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"description": "offset integer, default 0"
+								},
+								{
+									"key": "fields",
+									"value": "name",
+									"description": "fields you want to select, comma seperated. This is not working because there are no requirements to Allow fields",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "-id",
+									"description": "You can sort the filter by using ?sort=field. Use - to make it descending. Example: ?sort=-due to sort due descending. This is not working because there are no requirements to Allow fields",
+									"disabled": true
+								},
+								{
+									"key": "filter[created_at][between]",
+									"value": "2020-11-25T17:06:13.000000Z,2020-11-25T20:06:13.000000Z",
+									"disabled": true
+								},
+								{
+									"key": "filter[id][is]",
+									"value": "2,3",
+									"disabled": true
+								},
+								{
+									"key": "filter[id][between]",
+									"value": "1,2",
+									"disabled": true
+								},
+								{
+									"key": "filter[created_at][start]",
+									"value": "9127391283",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "checklist",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "History",
+			"item": [
+				{
+					"name": "Get list of history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/histories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"histories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get detail history by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/histories/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"histories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Checklist",
+			"item": [
+				{
+					"name": "Get checklist by given checklistId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/2?include=items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "{{api_token}}",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "items"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of checklists",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists?include=items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "items",
+									"description": "Comma separated"
+								},
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete checklist by given checklistId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update checklist by given checklistId",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"type\": \"checklists\",\n    \"id\": 1,\n    \"attributes\": {\n      \"object_domain\": \"contact\",\n      \"object_id\": \"1\",\n      \"description\": \"Need to verify this guy house.\",\n      \"is_completed\": false,\n      \"completed_at\": null,\n      \"created_at\": \"2018-01-25T07:50:14+00:00\"\n    },\n    \"links\": {\n      \"self\": \"https://dev-kong.command-api.kw.com/checklists/50127\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creates a Checklist object",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"object_domain\": \"contact\",\n      \"object_id\": \"1\",\n      \"due\": \"2019-01-25T07:50:14+00:00\",\n      \"urgency\": 1,\n      \"description\": \"Need to verify this guy house.\",\n      \"items\": [\n        \"Visit his house\",\n        \"Capture a photo\",\n        \"Meet him on the house\"\n      ],\n      \"task_id\": \"123\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Complete Item(s)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": [\n    {\n      \"item_id\": 1\n    },\n    {\n      \"item_id\": 376\n    },\n    {\n      \"item_id\": 3\n    },\n    {\n      \"item_id\": 4\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/complete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create item by given checklistId",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attribute\": {\n      \"description\": \"Need to verify this guy house again.\",\n      \"due\": \"2019-01-19 18:34:51\",\n      \"urgency\": \"2\",\n      \"assignee_id\": 123\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incomplete Item(s)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": [\n    {\n      \"item_id\": 1\n    },\n    {\n      \"item_id\": 2\n    },\n    {\n      \"item_id\": 3\n    },\n    {\n      \"item_id\": 4\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/incomplete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"incomplete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update bulk items",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": [\n    {\n      \"id\": \"64\",\n      \"action\": \"update\",\n      \"attributes\": {\n        \"description\": \"asd\",\n        \"due\": \"2019-01-19 18:34:51\",\n        \"urgency\": \"2\"\n      }\n    },\n    {\n      \"id\": \"2050\",\n      \"action\": \"update\",\n      \"attributes\": {\n        \"description\": \"{{data.attributes.description}}\",\n        \"due\": \"2019-01-19 18:34:51\",\n        \"urgency\": \"2\"\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items/_bulk",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items",
+								"_bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all items by given {checklistId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/items?filter[is_completed][is]=0&filter[due][between]=2019-01-04T17:00:00.000,2019-10-11T16:59:59.5959",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"items"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "filter[is_completed][is]",
+									"value": "0"
+								},
+								{
+									"key": "filter[due][between]",
+									"value": "2019-01-04T17:00:00.000,2019-10-11T16:59:59.5959"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count summary of checklist’s item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/items/summaries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"items",
+								"summaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get checklist item by given {checklistId} and {itemId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items/378",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items",
+								"378"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete checklist item by given {checklistId} and {itemId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items/377",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items",
+								"377"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Checklist Item on given {checklistId} and {itemId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Vm25gWyrS3L5PUTpUxLhTjZJZCsZGcnZxbQZGj6UTkaDfWGddV5zQeTgu6shky9wzruCn7eSdwZyPfGcYpsGLRTRttdejPJcB6q3LbfWVfR9FApDymHtZeHaxENWRZB7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attribute\": {\n      \"description\": \"Need to verify this guy house. Come on\",\n      \"due\": \"2019-01-19 18:34:51\",\n      \"urgency\": \"2\",\n      \"assignee_id\": 123\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/checklists/2/items/378",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"checklists",
+								"2",
+								"items",
+								"378"
+							],
+							"query": [
+								{
+									"key": "page[limit]",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "page[offset]",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4a5abf8e-2e5b-4acd-ab44-d3aaaa1b6833",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1a681d33-f352-4cd1-90d4-b8862a641c82",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e153edb0-8852-4065-a4b5-7f72dc406dc3",
+			"key": "url",
+			"value": "https://localhost:8000"
+		},
+		{
+			"id": "88e40825-8e30-4809-bf10-c66605667f86",
+			"key": "api_token",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
